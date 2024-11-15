@@ -1,0 +1,72 @@
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+}
+
+/* Contenedor principal */
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.map-wrapper {
+  width: 90%;
+  height: 80%;
+}
+
+/* Estilo base del mapa */
+.map {
+  width: 100%;
+  height: 100%;
+  background-color: white !important;
+  pointer-events: none;
+}
+
+/* Controles de selección */
+.controls {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  text-align: center;
+  gap: 20px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls input {
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: lightgray;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.custom-icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+/* Media queries para ajustar visualización de controles*/
+@media (max-width: 768px) {
+  .map-wrapper {
+    width: 100%;
+    height: 60%;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .custom-icon {
+    font-size: 20px;
+  }
+}
