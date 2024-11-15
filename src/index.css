@@ -13,6 +13,7 @@ body {
   height: 100vh;
 }
 
+/*Contenedor del mapa */
 .map-wrapper {
   width: 90%;
   height: 80%;
@@ -49,13 +50,14 @@ body {
   cursor: pointer;
 }
 
+/* Icono personalizado */
 .custom-icon {
   background: none;
   border: none;
   font-size: 24px;
 }
 
-/* Media queries para ajustar visualización de controles*/
+/* Media queries para ajustar visualización del contenedor del mapa, controles e icono*/
 @media (max-width: 768px) {
   .map-wrapper {
     width: 100%;
