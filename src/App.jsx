@@ -9,11 +9,13 @@ function Map() {
   const [countryColor, setCountryColor] = useState("#e3dece");
   const [markerColor, setMarkerColor] = useState("#f29170");
   const [geoJsonData, setGeoJsonData] = useState(null);
+  const countryCode = "ITA"; // Código ISO-3166 de Italia
+  const coordinates = [12.902782, 4.496366]; // Coordenadas de Roma [latitud, longitud]
 
   // Cargar datos GeoJSON
   const loadGeoJsonData = async () => {
     try {
-      const data = await fetchCountryGeoJson("ITA"); // Código ISO de Italia
+      const data = await fetchCountryGeoJson(countryCode);
       setGeoJsonData(data);
     } catch (error) {
       console.error("Error al cargar los datos del país:", error);
@@ -37,7 +39,7 @@ function Map() {
       <div className="map-wrapper">
         <MapContainer
           className="map"
-          center={[41.902782, 12.496366]} // Coordenadas de Roma
+          center={coordinates}
           zoom={5}
           zoomControl={false}
           dragging={false}
@@ -48,7 +50,7 @@ function Map() {
         >
           {geoJsonData && <GeoJSON data={geoJsonData} style={() => mapStyle} />}
           <Marker
-            position={[41.902782, 12.496366]}
+            position={coordinates}
             icon={CustomIcon({ color: markerColor })}
           />
         </MapContainer>
