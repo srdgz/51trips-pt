@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MapContainer, GeoJSON, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { fetchCountryGeoJson } from "./service/geojsonService";
@@ -10,7 +10,7 @@ function Map() {
   const [markerColor, setMarkerColor] = useState("#f29170");
   const [geoJsonData, setGeoJsonData] = useState(null);
   const countryCode = "ITA"; // Código ISO-3166 de Italia
-  const coordinates = [12.902782, 4.496366]; // Coordenadas de Roma [latitud, longitud]
+  const coordinates = [41.902782, 12.496366]; // Coordenadas de Roma [latitud, longitud]
 
   // Cargar datos GeoJSON
   const loadGeoJsonData = async () => {
